@@ -1,21 +1,21 @@
 # 🧠 Mental Wellness Support Platform (Prototype)
 
-A web-based **Mental Wellness Support Platform** designed to help users track emotional well-being, reflect through journaling, and access guided wellness resources.
+A web-based **Mental Wellness Support Platform** designed to help users reflect on their emotions, access wellness resources, and connect through a prototype telehealth-style session system.
 
-This project focuses on creating a **supportive digital environment** that combines self-reflection tools, wellness tracking concepts, and AI-powered assistance.
+This project demonstrates how digital tools can support mental well-being using journaling, AI assistance, and simulated remote consultation features.
 
-⚠️ This is a **prototype system** built primarily for demonstration and learning purposes. It is not a medical or diagnostic tool.
+⚠️ This is a **prototype application** built for learning and demonstration purposes. It is not a medical or diagnostic system.
 
 ---
 
-## 🎯 Project Goal
+## 🎯 Project Objective
 
-The aim of this project is to explore how digital platforms can support mental wellness through:
+To design a digital platform that combines:
 
-- Self-reflection tools  
-- Wellness activity tracking concepts  
-- Easy access to professional support interfaces  
-- AI-assisted guidance for general well-being  
+- Emotional self-reflection tools  
+- Wellness tracking concepts  
+- Remote counselor interaction workflows  
+- AI-assisted mental wellness guidance  
 
 ---
 
@@ -26,25 +26,41 @@ The aim of this project is to explore how digital platforms can support mental w
 - Entries are stored locally in the browser  
 - Encourages emotional reflection and self-awareness  
 
-### 💓 Wellness Tracking Concept (Future Integration)
-- Designed to integrate wearable device data (e.g., Fitbit)  
-- Intended to track sleep patterns and heart rate  
-- Conceptual analysis of how physical health indicators may relate to mental well-being  
-- Currently implemented as a **UI/UX prototype** (no real device data connected)
+---
 
-### 🎥 Therapist / Counselor Video Session Prototype
-- Interface for booking or starting a video session  
-- Prototype link-based connection system to simulate joining sessions across devices  
-- Demonstrates how online counseling workflows could function
+### 💓 Wellness Tracking Concept (Future Scope)
+- Designed to integrate wearable data such as **sleep patterns** and **heart rate**
+- Intended to analyze how physical health may correlate with emotional well-being  
+- Currently implemented as a **UI/UX concept** without live device data  
+
+---
+
+### 🎥 Video Session with Therapist (Prototype)
+
+A **prototype remote session system** built to simulate online mental health consultations.
+
+**How it works:**
+- A session link can be generated and shared  
+- Opening the link on another browser/device allows both sides to connect  
+- Demonstrates how digital therapy or counseling sessions could be structured  
+
+**Backend Prototype:**  
+Implemented using **Python** to handle the session connection logic and simulate real-time communication workflows.
+
+This feature focuses on understanding **telehealth system design**, not production-ready deployment.
+
+---
 
 ### 🤖 AI Wellness Support Chatbot (Gemini API)
-- Integrated Gemini API for conversational support  
-- Provides general wellness tips, coping suggestions, and stress management ideas  
-- Designed as **supportive guidance**, not professional medical advice  
+- Integrated Gemini API for conversational interaction  
+- Provides general coping suggestions, stress management tips, and wellness guidance  
+- Designed as **supportive AI assistance**, not a replacement for professional care  
+
+---
 
 ### 🧘 Guided Wellness Resources
-- Structured sections for meditation, breathing exercises, and relaxation practices  
-- Promotes stress reduction and mindfulness routines  
+- Sections for meditation and breathing exercises  
+- Encourages stress reduction and mindfulness habits  
 
 ---
 
@@ -54,51 +70,53 @@ The aim of this project is to explore how digital platforms can support mental w
 HTML, CSS, JavaScript  
 
 **Backend (Prototype Level):**  
-JavaScript-based logic for session simulation and feature workflows  
+Python (used for video session link-based connection prototype)  
+JavaScript (frontend interaction logic)
 
 **AI Integration:**  
-Gemini API for chatbot-based wellness assistance  
+Gemini API for chatbot-based support
 
 **Data Storage:**  
-Client-side (browser storage only, no database)
+Client-side browser storage (no database integration)
 
 ---
 
-## 🏗 Nature of the Project
+## 🏗 Project Nature
 
 This application is a:
 
 ✔ Frontend-focused wellness platform prototype  
-✔ Concept demonstration for digital mental health tools  
-✔ Exploration of AI-assisted support interfaces  
+✔ Telehealth workflow simulation  
+✔ AI-assisted support interface demonstration  
 
 It does **not** include:
-- Real medical analysis  
-- Live wearable device integration  
-- Secure backend infrastructure  
-- Clinical or professional therapy services  
+- Real-time medical monitoring  
+- Secure production backend  
+- Clinical-grade video infrastructure  
+- Professional therapy services  
 
 ---
 
-## 🚀 What This Project Demonstrates
+## 🚀 Skills Demonstrated
 
-- Designing sensitive, user-friendly wellness interfaces  
-- Managing user-generated data on the client side  
-- Simulating real-time communication workflows  
-- Integrating AI conversational support into web applications  
+- Designing user-friendly mental wellness interfaces  
+- Managing client-side user data  
+- Building a Python-based communication prototype  
+- Integrating AI conversational systems into web apps  
+- Structuring multi-feature web applications
 
 ---
 
 ## 🔮 Future Enhancements
 
-- Secure backend with encrypted user data storage  
-- Real wearable device API integration  
-- Appointment scheduling and authentication system  
-- Mood analytics and progress dashboards  
-- Community wellness features  
+- Secure backend and encrypted user data storage  
+- Real wearable API integration (Fitbit, etc.)  
+- Authentication and appointment scheduling  
+- Mood tracking dashboards  
+- Secure real-time video infrastructure  
 
 ---
 
 ## ⚠️ Disclaimer
 
-This project is for **educational and demonstration purposes only** and should not be used as a substitute for professional mental health care.
+This project is for **educational and demonstration purposes only** and is not intended to provide medical or psychological treatment.
