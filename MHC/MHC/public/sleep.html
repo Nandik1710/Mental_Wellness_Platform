@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Quality Analyzer</title>
+    <link rel="stylesheet" href="sleep.css">
+</head>
+<body>
+    <a href="Landingpage.html" class="home-btn">Home</a>
+
+    <div class="container">
+        <h1>Sleep Quality Analyzer</h1>
+        <form id="sleepForm">
+            <label for="sleepStart">Sleep Start Time:</label>
+            <input type="time" id="sleepStart" name="sleepStart" required>
+
+            <label for="sleepEnd">Sleep End Time:</label>
+            <input type="time" id="sleepEnd" name="sleepEnd" required>
+
+            <label for="points">How was your sleep? (1-10 points)</label>
+            <input type="number" id="points" name="points" min="1" max="10" required>
+
+            <button type="submit">Analyze Sleep</button>
+        </form>
+
+        <div id="result" class="result">
+            <!-- Results will be displayed here -->
+        </div>
+    </div>
+
+    <script src="sleep.js"></script>
+</body>
+</html>

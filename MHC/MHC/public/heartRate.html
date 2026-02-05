@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Rate Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #fff0f0;
+            padding: 2rem;
+            margin: 0;
+        }
+
+        .home-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #e86f5c;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        .home-btn:hover {
+            background-color: #d65d4a;
+        }
+
+        .main-title {
+            text-align: center;
+            color: #e63946;
+            font-size: 36px;
+            margin-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .top-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .input-section {
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .stats-section {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .stat-tab {
+            flex: 1;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #e63946 0%, #c1121f 100%);
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .stat-tab:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-tab h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .stat-tab .value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        .charts-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .chart-wrapper {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            height: 300px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #e63946;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c1121f;
+        }
+
+        .analysis {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f1faee;
+            border-radius: 5px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .warning {
+            color: #e63946;
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #e63946;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="Landingpage.html" class="home-btn">Home</a>
+
+    <h1 class="main-title">Heart Rate Tracker</h1>
+    <div class="container">
+        <div class="top-section">
+            <div class="input-section">
+                <div>
+                    <label>Date and Time:</label>
+                    <input type="datetime-local" id="timestamp">
+                </div>
+                <div>
+                    <label>Heart Rate (BPM):</label>
+                    <input type="number" id="heartRate" min="30" max="220" placeholder="Enter heart rate">
+                </div>
+                <div>
+                    <label>Activity Level:</label>
+                    <select id="activity">
+                        <option value="resting">Resting</option>
+                        <option value="light">Light Activity</option>
+                        <option value="moderate">Moderate Exercise</option>
+                        <option value="intense">Intense Exercise</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Mood:</label>
+                    <select id="mood">
+                        <option value="calm">Calm</option>
+                        <option value="happy">Happy</option>
+                        <option value="stressed">Stressed</option>
+                        <option value="anxious">Anxious</option>
+                        <option value="tired">Tired</option>
+                    </select>
+                </div>
+                <button onclick="trackHeartRate()">Track Heart Rate</button>
+                <div class="analysis" id="analysis"></div>
+            </div>
+            <div class="stats-section">
+                <div class="stat-tab">
+                    <h3>Latest Heart Rate</h3>
+                    <div class="value"><span id="currentBPM">--</span></div>
+                    <div>BPM</div>
+                </div>
+                <div class="stat-tab">
+                    <h3>Average Rate</h3>
+                    <div class="value"><span id="averageBPM">--</span></div>
+                    <div>BPM</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="charts-container">
+            <div class="chart-wrapper">
+                <canvas id="heartRateLineChart"></canvas>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="heartRateBarChart"></canvas>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>Heart Rate History</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Heart Rate</th>
+                        <th>Activity</th>
+                        <th>Mood</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="heartRateHistory"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let heartRateData = JSON.parse(localStorage.getItem('heartRateData')) || [];
+        let lineChart, barChart;
+
+        function trackHeartRate() {
+            let timestamp = new Date(document.getElementById('timestamp').value);
+            let heartRate = parseInt(document.getElementById('heartRate').value);
+            let activity = document.getElementById('activity').value;
+            let mood = document.getElementById('mood').value;
+
+            if (!timestamp || !heartRate || heartRate < 30 || heartRate > 220) {
+                alert("Please enter valid date and heart rate (30-220 BPM).");
+                return;
+            }
+
+            let analysis = analyzeHeartRate(heartRate, activity);
+            document.getElementById("analysis").innerHTML = analysis;
+            document.getElementById("currentBPM").textContent = heartRate;
+
+            heartRateData.push({
+                timestamp: timestamp.toISOString(),
+                heartRate: heartRate,
+                activity: activity,
+                mood: mood
+            });
+
+            if (heartRateData.length > 10) {
+                heartRateData.shift();
+            }
+
+            // Update average
+            const average = heartRateData.reduce((sum, entry) => sum + entry.heartRate, 0) / heartRateData.length;
+            document.getElementById("averageBPM").textContent = average.toFixed(1);
+
+            localStorage.setItem('heartRateData', JSON.stringify(heartRateData));
+            loadHistory();
+            updateCharts();
+        }
+
+        function analyzeHeartRate(heartRate, activity) {
+            let analysis = "";
+
+            const zones = {
+                resting: { min: 60, max: 100 },
+                light: { min: 70, max: 120 },
+                moderate: { min: 100, max: 150 },
+                intense: { min: 130, max: 180 }
+            };
+
+            const currentZone = zones[activity];
+
+            if (heartRate < currentZone.min) {
+                analysis += `<p>Your heart rate is below typical range for ${activity} activity.</p>`;
+            } else if (heartRate > currentZone.max) {
+                analysis += `<p class="warning">Your heart rate is above typical range for ${activity} activity.</p>`;
+            } else {
+                analysis += `<p>Your heart rate is within normal range for ${activity} activity.</p>`;
+            }
+
+            return analysis;
+        }
+
+        function deleteEntry(index) {
+            heartRateData.splice(index, 1);
+            localStorage.setItem('heartRateData', JSON.stringify(heartRateData));
+            loadHistory();
+            updateCharts();
+        }
+
+        function loadHistory() {
+            let history = document.getElementById("heartRateHistory");
+            history.innerHTML = '';
+            heartRateData.forEach((entry, i) => {
+                let timestamp = new Date(entry.timestamp);
+                let newRow = `<tr>
+                    <td>${timestamp.toLocaleString()}</td>
+                    <td>${entry.heartRate}</td>
+                    <td>${entry.activity}</td>
+                    <td>${entry.mood}</td>
+                    <td><button onclick="deleteEntry(${i})">Delete</button></td>
+                </tr>`;
+                history.innerHTML += newRow;
+            });
+        }
+
+        function updateCharts() {
+            updateLineChart();
+            updateBarChart();
+        }
+
+        function updateLineChart() {
+            const ctx = document.getElementById('heartRateLineChart').getContext('2d');
+
+            if (lineChart) {
+                lineChart.destroy();
+            }
+
+            lineChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: heartRateData.map(entry => new Date(entry.timestamp).toLocaleTimeString()),
+                    datasets: [{
+                        label: 'Heart Rate (BPM)',
+                        data: heartRateData.map(entry => entry.heartRate),
+                        borderColor: '#e63946',
+                        borderWidth: 2,
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            suggestedMax: 200,
+                            title: {
+                                display: true,
+                                text: 'BPM'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateBarChart() {
+            const ctx = document.getElementById('heartRateBarChart').getContext('2d');
+
+            const avgByActivity = {};
+            heartRateData.forEach(entry => {
+                if (!avgByActivity[entry.activity]) {
+                    avgByActivity[entry.activity] = {
+                        sum: 0,
+                        count: 0
+                    };
+                }
+                avgByActivity[entry.activity].sum += entry.heartRate;
+                avgByActivity[entry.activity].count += 1;
+            });
+
+            const activities = Object.keys(avgByActivity);
+            const averages = activities.map(activity =>
+                avgByActivity[activity].sum / avgByActivity[activity].count
+            );
+
+            if (barChart) {
+                barChart.destroy();
+            }
+
+            barChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: activities,
+                    datasets: [{
+                        label: 'Average Heart Rate',
+                        data: averages,
+                        backgroundColor: '#e63946',
+                        borderColor: '#e63946',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            suggestedMax: 200,
+                            title: {
+                                display: true,
+                                text: 'BPM'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Set default timestamp and load initial data
+        window.onload = () => {
+            const now = new Date();
+            now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+            document.getElementById('timestamp').value = now.toISOString().slice(0, 16);
+            loadHistory();
+            updateCharts();
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SootheSpace</title>
+    <link rel="stylesheet" href="Landingpage.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">SootheSpace</div>
+        <div class="nav-links">
+            <div class="auth-buttons">
+                <button class="btn btn-login">Log In</button>
+                <button class="btn btn-signup">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">One stop solution <br>for <span>Mental Wellness</span></h1>
+            <p class="hero-description">We've provided a safe space for everyone to work on themselves and grow as an individual. <br>
+                Find Balance, Embrace Peace – Your Journey to Mental Wellness Starts Here!
+            </p>
+            <button class="btn hero-btn" onclick="scrollToFeatures()">Start Your Journey</button>
+        </div>
+        <div class="illustration">
+            <div class="leaf-decoration"></div>
+            <img src="LandingPagebg.jpg" alt="s5" />
+        </div>
+    </main>
+
+    <section id="features" class="features">
+        <div class="feature">
+            <h2>Journal for Self-Analysis</h2>
+            <p>Track your thoughts and emotions daily</p>
+            <a href="introJournal.html">Go to Journal</a>
+        </div>
+
+        <div class="feature">
+            <h2>Heart Rate Tracking</h2>
+            <p>Know your heart, know your health</p>
+            <a href="heartRate.html">View Tracking</a>
+        </div>
+
+        <div class="feature">
+            <h2>Sleep Tracking</h2>
+            <p>Understand your sleep, improve your life</p><br>
+            <a href="sleeptracker.html">View Tracking</a>
+        </div>
+
+        <div class="feature">
+            <h2>Yoga & Meditation Videos</h2>
+            <p>Follow guided sessions for relaxation</p>
+            <a href="med.html">Explore Self Care</a>
+        </div>
+
+        <div class="feature">
+            <h2>Guided Breathing Exercises</h2>
+            <p>Practice breathing techniques for stress relief</p>
+            <a href="BE.html">Start Breathing</a>
+        </div>
+
+        <div class="feature">
+            <h2>My Companion <br></h2><br>
+            <p>Get instant mental wellness assistance</p>
+            <a href="AIbot.html">Chat Now</a>
+        </div>
+
+        <div class="feature">
+            <h2>VideoChat <br>Support</h2>
+            <p>Connect to a medical professional right now</p>
+            <a href="https://localhost:8181/">Connect Now</a>  <!-- Changed from "/" to "/create-room" -->
+        </div>
+    </section>
+
+    <script>
+        function scrollToFeatures() {
+            const featuresSection = document.getElementById('features');
+            featuresSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Add subtle hover effects to buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                if (button.classList.contains('btn-signup') || button.classList.contains('hero-btn')) {
+                    button.style.backgroundColor = '#d65d4a';
+                } else if (button.classList.contains('btn-login')) {
+                    button.style.backgroundColor = '#4a90e2';
+                }
+            });
+
+            button.addEventListener('mouseleave', () => {
+                if (button.classList.contains('btn-signup') || button.classList.contains('hero-btn')) {
+                    button.style.backgroundColor = '#e86f5c';
+                } else if (button.classList.contains('btn-login')) {
+                    button.style.backgroundColor = 'transparent';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

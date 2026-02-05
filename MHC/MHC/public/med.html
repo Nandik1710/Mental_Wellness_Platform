@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation for Anxiety</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            color: rgb(31, 30, 30);
+            background-color: #fdf6f0;
+            line-height: 1.6;
+        }
+
+        .home-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #e86f5c;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        .home-btn:hover {
+            background-color: #d65d4a;
+        }
+
+        header {
+            background: #f67134;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .info-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-section h2 {
+            color: #1a2a6c;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .info-section ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+
+        .info-section li {
+            margin: 0.8rem 0;
+        }
+
+        .video-category {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-category h2 {
+            color: #1a2a6c;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .video-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 1.5rem;
+            padding: 1rem 0;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .video-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .video-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .video-scroll::-webkit-scrollbar-thumb {
+            background: #f67134;
+            border-radius: 4px;
+        }
+
+        .video-scroll::-webkit-scrollbar-thumb:hover {
+            background: #e15f20;
+        }
+
+        .video-item {
+            flex: 0 0 auto;
+            width: 300px;
+            scroll-snap-align: start;
+        }
+
+        iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: none;
+        }
+
+        footer {
+            background: #f67134;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .video-item {
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="Landingpage.html" class="home-btn">Home</a>
+
+    <header>
+        <h1>Meditation for Anxiety Relief</h1>
+    </header>
+
+    <div class="container">
+        <section class="info-section">
+            <h2>Yoga Exercises</h2>
+            <p>Yoga helps with anxiety relief by combining physical movement, breath control, and mindfulness. Here's
+                how it works:</p>
+            <ul>
+                <li>Activates the Parasympathetic Nervous System</li>
+                <li>Reduces Stress Hormones</li>
+                <li>Encourages Mindfulness and Present-Moment Awareness</li>
+                <li>Releases Muscle Tension</li>
+                <li>Boosts Mood and Emotional Resilience</li>
+                <li>Encourages Self-Compassion and Acceptance</li>
+            </ul>
+        </section>
+
+        <section class="video-category">
+            <h2>Escape the Stress</h2>
+            <div class="video-scroll">
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/inpok4MKVLM" allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/O-6f5wQXSu8" allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/sTANio_2E0Q?si=pXeJvwdXw_bT1BR5"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/40bPxbFUCj4?si=tG5HEthXVEjaP_MG"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/h7e-gaPHw5E?si=3K_5MuetGmp63SFY"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/Mzda4jnA-mk?si=-F20cqnHk2s5NQPf"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/92i5m3tV5XY" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-category">
+            <h2>Anxiety Relief at Your Fingertips</h2>
+            <div class="video-scroll">
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/LBEAJcp0lTs?si=i-CVCy069ekSoaKm"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/6arfMc9Aj4k?si=QIceCkC1QAv8eRsI"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/1XCObQjSHIs?si=wit1RN5aVV8rEF1v"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/7cqzSNgNo1M?si=gZ7Q17ywckaPbGGY"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/McCDfP5M878?si=KC8_FYI9cUwTdVWr"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/MdHXlAgUe9Y?si=RgS3wIvs46KISHtp"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/WGG7MGgptxE?si=BLyldqhSylzafsgr"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-category">
+            <h2>Music for Tranquility</h2>
+            <div class="video-scroll">
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/bP9gMpl1gyQ?si=3Z8VVXuyCxUJux9J"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/bP9gMpl1gyQ?si=3Z8VVXuyCxUJux9J"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/I3OJUwILelU?si=YJ_5YZ4eOsyBmk57"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/xRcWlA1I9z0?si=v0Wwz9hq40DPK0AO"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/1R47EQrxgfw?si=CbeOGqHjHH1mORvO"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/_4kHxtiuML0?si=9fw-zVP6d1MzDFKE"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/0Ni00XDSd6E?si=uTsSCrnGezjVIwl5"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Meditation for Anxiety</p>
+    </footer>
+</body>
+
+</html>

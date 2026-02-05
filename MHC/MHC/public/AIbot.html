@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbot</title>
+  <link rel="stylesheet" href="AIbot.css" />
+</head>
+<body>
+  <a href="Landingpage.html" class="home-btn">Home</a>
+  <div class="chat-container">
+    <h1>My Companion</h1>
+    <div id="chat-box" class="chat-box"></div>
+    <div class="input-container">
+      <input
+        type="text"
+        id="user-input"
+        placeholder="Type a message..."
+        autocomplete="off"
+      />
+      <input type="file" id="image-input" accept="image/*" />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+  <script src="AIbot.js"></script>
+</body>
+</html>

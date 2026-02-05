@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-7-8 Breathing Exercise</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="BE.css">
+</head>
+
+<body>
+    <a href="Landingpage.html" class="home-btn">Home</a>
+
+    <div class="container">
+        <h1><i class="fas fa-wind"></i> 4-7-8 Breathing</h1>
+        <p>A natural tranquilizer for the nervous system. Practice this mindful breathing technique to reduce stress and
+            anxiety.</p>
+
+        <div class="instructions">
+            <div class="instruction-step">
+                <i class="fas fa-lungs"></i>
+                <div>Inhale<br>4 seconds</div>
+            </div>
+            <div class="instruction-step">
+                <i class="fas fa-pause"></i>
+                <div>Hold<br>7 seconds</div>
+            </div>
+            <div class="instruction-step">
+                <i class="fas fa-wind"></i>
+                <div>Exhale<br>8 seconds</div>
+            </div>
+        </div>
+
+        <div class="circle-container">
+            <div class="circle" id="circle">Inhale</div>
+            <div class="phase-indicator" id="phaseIndicator"></div>
+        </div>
+        <button id="breathButton" onclick="toggleBreathing()">
+            <i class="fas fa-play"></i> Start
+        </button>
+    </div>
+
+    <script src="BE.js"></script>
+</body>
+
+</html>

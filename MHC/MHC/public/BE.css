@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background: #fdf6f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #272727;
+}
+
+.home-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #e86f5c;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.home-btn:hover {
+    background-color: #d65d4a;
+}
+
+.container {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    margin: 20px;
+}
+
+h1 {
+    color: #1a2a6c;
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+p {
+    color: #555;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.instructions {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(26, 42, 108, 0.1);
+    border-radius: 15px;
+}
+
+.instruction-step {
+    text-align: center;
+    padding: 10px;
+}
+
+.instruction-step i {
+    color: #1a2a6c;
+    margin-bottom: 8px;
+}
+
+.circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    margin: 30px 0;
+    position: relative;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background: #f67134;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.circle::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: #f67134;
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+button {
+    background: #f67134;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+@keyframes inhale {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(3);
+    }
+}
+
+@keyframes hold {
+
+    0%,
+    100% {
+        transform: scale(3);
+    }
+}
+
+@keyframes exhale {
+    0% {
+        transform: scale(3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.phase-indicator {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    right: 0;
+    font-size: 16px;
+    color: #666;
+    opacity: 0.8;
+}
